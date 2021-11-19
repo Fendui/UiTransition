@@ -78,7 +78,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
 
 ## Config anatomy 🧬
 
-### Robust (with full enter and leave configurations)
+#### Robust (with full enter and leave configurations)
 
 ````js
   {
@@ -113,7 +113,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
   }
 ````
 
-### Simple (with a root configuration, and enter, and leave)
+#### Simple (with a root configuration, and enter, and leave)
 
 ````js
   {
@@ -146,7 +146,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
 
 Since most cases of transitions will be that the leave state is a reverse of the enter state, the <code>&lt;UiTransition&gt;</code> <strong>config object</strong> can be further simplified to a flat <code>Object</code>.
 
-### Simplest form
+#### Simplest form
 ````js
   // fade
   {
@@ -161,7 +161,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
 
 ## Valid config ✅
 
-### A simple valid 'static' preset
+#### A simple valid 'static' preset
 
 ````js
   {
@@ -178,7 +178,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   // usage: config='rotate'
 ````
 
-### A simple valid 'dynamic' preset
+#### A simple valid 'dynamic' preset
 
 ````js
   {
@@ -229,7 +229,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
 
 ## Examples 💁‍♀️
 
- ### Simplest form
+ #### Simplest form
  
 ````vue
   <div id='app'>
@@ -241,7 +241,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   </div>      
 ````
 
-### With a static config of type ``String``
+#### With a static config of type ``String``
   
 ````vue
   <div id='app'>
@@ -253,7 +253,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   </div>      
 ````
 
-### With a dynamic config of type ``String``
+#### With a dynamic config of type ``String``
   
 ````vue
   <div id='app'>
@@ -265,7 +265,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   </div>      
 ````
 
-### With a static config of type ``Object``
+#### With a static config of type ``Object``
   
 ````vue
   <div id='app'>
@@ -284,7 +284,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   </div>      
 ````
 
-### Overriding a config with type ``Array``
+#### Overriding a config with type ``Array``
   
 ````vue
   <div id='app'>
@@ -302,7 +302,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   </div>      
 ````
 
-### Using Vue props
+#### Using Vue props
   
 ````vue
   <div id='app'>
@@ -314,7 +314,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
   </div>      
 ````
 
-### As a ``<TransitionGroup>``
+#### As a ``<TransitionGroup>``
   
 ````vue
   <div id='app'>
