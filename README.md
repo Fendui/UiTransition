@@ -36,6 +36,40 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
 </table>
 
 
+## Events ⏲
+
+<table>
+ <thead>
+  <tr>
+   <th>
+    name
+   </th>
+   <th>
+    payload
+   </th>
+   <th>
+    description
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+    state-change
+   </td>
+   <td>
+    String
+   </td>
+   <td>
+    This event emits whenever any Vue's <code>&lt;Transition&gt;</code> hook is called, with a payload of the active transition state. Eg 'beforeEnter', 'enter', etc.
+   </td>
+  </tr>
+ </tbody>
+</table>
+
+> The <code>&lt;UiTransition&gt;</code> component emits all [Vue's transition hooks](https://v3.vuejs.org/guide/transitions-enterleave.html#javascript-hooks)
+
+
 ## Caveats ℹ
 
 <ul><li>The <code>&lt;UiTransition&gt;</code> component is not available as a standalone component for now.</li>
