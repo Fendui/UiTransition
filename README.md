@@ -325,3 +325,7 @@ Since most cases of transitions will be that the leave state is a reverse of the
     </UiTransition>
   </div>      
 ````
+
+## Miscellaneous 🧰
+
+The ``<UiTransition>`` component is widely used as a wrapper component throughout FendUI. When used as a wrapper component, you can always have access to its ``config`` prop, or any ``<Transition>`` prop, or hook.
