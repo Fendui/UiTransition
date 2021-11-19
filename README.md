@@ -6,7 +6,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
  <ul>
   <li>Create dynamic transitions on the fly</li>
   <li>Save transition presets</li>
-  <li>Supports all <code>&lt;Transition&gt;</code> props</li>
+ <li>Supports all <code>&lt;Transition&gt;</code> and <code>&lt;TransitionGroup&gt;</code> props</li>
   <li>Supports group transition</li>
  <li>Renders no wrapper element</li>
  </ul>
@@ -21,7 +21,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
  </thead>
  <tbody>
   <tr>
-    <td>config</td><td><code>[String, Object, Array, Boolean]</code></td><td>'fade'</td><td>This is where you configure the current transition. The values here could be dynamic or static.<br/>All data types accepted, except for <code>Array</code> resolves into an <code>Object</code>. Arrays resolves into an array of objects.<br/><br/><code>String</code>: Use a preset that matches the name. Strings could take in arguments, or stay plane. Eg 'fade', 'fade(0, 1)', 'fade({from: 0, to: 1})'. <br/><strong>NB:</strong> when passing arguments to a string value, the referenced saved preset <em>Must</em> be a <code>Function</code>. Also, when passing arguments to a string value, use quotes for string values. Eg <code>fade(var(--from), 1)</code> will throw an error, while <code>fade('var(--from)', 1)</code> wont.<br/><br/><code>Object</code>: When an object is passed, the valid values in the object will be used. Check below for a valid <code>&lt;UiTransition&gt;</code> object value.<br/><br/><code>Array</code>: Using an array value is mostly useful to override a saved preset. Eg <code>['fade', {duration: 400}]</code>. The item(s) with higher array index overrides those with lower indexes.<br/><br/><code>Boolean</code>: Boolean values are mostly used to disable the transition config, or use the default value of 'fade', if the Boolean value is <code>true</code></td>
+    <td>config</td><td><code>[String, Object, Array, Boolean]</code></td><td>'fade'</td><td>This is where you configure the current transition. The values here could be dynamic or static.<br/>All data types accepted, except for <code>Array</code> resolves into an <code>Object</code>. Arrays resolves into an array of objects.<br/><br/><code>String</code>: Use a preset that matches the name. Strings could take in arguments, or stay plane. Eg <code>'fade'</code>, <code<'fade(0, 1)'</code>, <code>'fade({from: 0, to: 1})'</code>. <br/><strong>NB:</strong> when passing arguments to a string value, the referenced saved preset <em>Must</em> be a <code>Function</code>. Also, when passing arguments to a string value, use quotes for string values. Eg <code>fade(var(--from), 1)</code> will throw an error, while <code>fade('var(--from)', 1)</code> wont.<br/><br/><code>Object</code>: When an object is passed, the valid values in the object will be used. Check below for a valid <code>&lt;UiTransition&gt;</code> object value.<br/><br/><code>Array</code>: Using an array value is mostly useful to override a saved preset. Eg <code>['fade', {duration: 400}]</code>. The item(s) with higher array index overrides those with lower indexes.<br/><br/><code>Boolean</code>: Boolean values are mostly used to disable the transition config, or use the default value of 'fade', if the Boolean value is <code>true</code></td>
   </tr>
   <tr>
    <td>Group</td><td><code>Boolean</code></td><td>undefined</td><td>Using this prop will cause the <code>&lt;UiTransition&gt;</code> component to render a <code>&lt;TransitionGroup&gt;</code> component, and key any element without a key.</td>
@@ -39,7 +39,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
 ## Caveats ℹ
 
 <ul><li>The <code>&lt;UiTransition&gt;</code> component is not available as a standalone component for now.</li>
-  <li>FendUI tries to give a butter smooth transition, this means we can only work with the 'friendly' transition properties <em>opacity</em> & <em>transform</em></li><li>FendUI <strong>will not</strong> check for a valid CSS value, so using a wrong value might break your transition.</li><li>The <code>&lt;UiTransition&gt;</code> config prop makes use of Vue's <code>&lt;Transition&gt;</code> component under the hood.</li></ul>
+  <li>FendUI tries to give a butter smooth transition, this means we can only work with the 'friendly' transition properties <em>opacity</em> & <em>transform</em></li><li>FendUI <strong>will not</strong> check for a valid CSS value, so using a wrong value might break your transition.</li><li>The <code>&lt;UiTransition&gt;</code> config prop makes use of Vue's <code>&lt;Transition&gt;</code> <code>name</code> prop under the hood.</li></ul>
   
 
 ## Config anatomy 🧬
@@ -112,7 +112,7 @@ The UiTransition component is a wrapper component built on Vue's Transition comp
 
 Since most cases of transitions will be that the leave state is a reverse of the enter state, the <code>&lt;UiTransition&gt;</code> <strong>config object</strong> can be further simplified to a flat <code>Object</code>.
 
-<strong>Simplest form</fade>
+<strong>Simplest form</strong>
 ````js
   // fade
   {
